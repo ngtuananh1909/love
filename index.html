@@ -4,11 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ask me</title>
-    <link rel="stylesheet" href="style.css">
 </head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background-image: url("https://images.pexels.com/photos/3900424/pexels-photo-3900424.jpeg");
+        background-size: cover;
+        background-position: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        text-shadow: 2px 2px 4px #000;
+    }
+
+    .question {
+        background-color: rgba(255, 0, 162, 0.5);
+        padding: 20px 70px;
+        border-radius: 20px;
+        font-size: 25px;
+        margin-bottom: 40px;
+        animation: fadeIn 1s ease;
+        font-weight: bold;
+    }
+
+    .answer {
+        display: flex;
+        gap: 30px;
+    }
+
+    .answer div {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 0px 40px;
+        border-radius: 15px;
+        color: #111;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        font-size: 40px;
+    }
+
+    .answer div:hover {
+        background-color: #ff69b4;
+        color: white;
+        transform: scale(1.1);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .picture {
+        width: 150px;          
+        height: 150px;         
+        object-fit: cover;     
+        border-radius: 20px;   
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3); 
+        margin-bottom: 10%;
+        margin-right: 30px;
+    }
+
+    .think-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-top: 50px;
+    }
+    .thought-bubble {
+        position: relative;
+        background: white;
+        border-radius: 25px;
+        padding: 15px 25px;
+        max-width: 220px;
+        font-size: 1.2rem;
+        color: #333;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        margin-bottom: 100px;
+    }
+
+    .thought-bubble::after {
+        content: "";
+        position: absolute;
+        left: -15px;
+        top: 20px;
+        width: 20px;
+        height: 20px;
+        background: white;
+        border-radius: 50%;
+        box-shadow: -25px 10px 0 white;
+    }
+
+</style>
 <body>
     <div class="think-wrapper">
-        <img id="picture" class="picture" src="picture/1.jpg" alt="nhớ đồng ý" title="nhớ đồng ý">
+        <img id="picture" class="picture" src="https://hoseiki.vn/wp-content/uploads/2025/03/meo-cute-14.jpg" alt="nhớ đồng ý" title="nhớ đồng ý">
         <div class="thought-bubble">Đồng ý đi màaaa 😳</div>
     </div>
 
@@ -24,5 +121,33 @@
         </div>
     </div>
 </body>
-<script src="script.js"></script>
+<script>
+    const btnKo = document.getElementById('btn-ko');
+    const img = document.getElementById('picture');
+    const bubble = document.querySelector('.thought-bubble');
+
+    const imageList = [
+        'https://inkythuatso.com/uploads/images/2022/05/a732e392b657be4fceffdffd214e5e21-08-23-41-00.jpg',
+        'https://maunailxinh.com/wp-content/uploads/2025/05/anh-meo-gian-cute-1.jpg',
+        'https://inkythuatso.com/uploads/thumbnails/800/2022/05/anh-meo-che-anh-meo-bua-17-09-00-01-36.jpg',
+        'https://thichtrangtri.com/wp-content/uploads/2025/05/anh-meo-gian-cute-4.jpg'
+    ];
+
+    const thoughtTexts = [
+        'Chắc bấm nhầm hoi đúng hk😢',
+        'Vẫn còn hi vọng chứ...? 😢',
+        'Tại sao lại là không...?',
+        'Thôi khỏi cần nữa... tớ ổn mà 🥲'
+    ];
+
+    let currentImage = 0;
+
+    btnKo.addEventListener('click', () => {
+        img.src = imageList[currentImage];
+        bubble.textContent = thoughtTexts[currentImage];
+        currentImage = (currentImage + 1) % imageList.length;
+    });
+
+
+</script>
 </html>
