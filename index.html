@@ -8,100 +8,108 @@
 </head>
 <style>
     body {
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        background-image: url("https://images.pexels.com/photos/3900424/pexels-photo-3900424.jpeg");
-        background-size: cover;
-        background-position: center;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: white;
-        text-shadow: 2px 2px 4px #000;
-    }
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url("https://images.pexels.com/photos/3900424/pexels-photo-3900424.jpeg");
+    background-size: cover;
+    background-position: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-shadow: 2px 2px 4px #000;
+}
 
-    .question {
-        background-color: rgba(255, 0, 162, 0.5);
-        padding: 20px 70px;
-        border-radius: 20px;
-        font-size: 25px;
-        margin-bottom: 40px;
-        animation: fadeIn 1s ease;
-        font-weight: bold;
-    }
+.question {
+    background-color: rgba(255, 0, 162, 0.5);
+    padding: 20px 70px;
+    border-radius: 20px;
+    font-size: 25px;
+    margin-bottom: 40px;
+    animation: fadeIn 1s ease;
+    font-weight: bold;
+}
 
-    .answer {
-        display: flex;
-        gap: 30px;
-    }
+.answer {
+    display: flex;
+    gap: 30px;
+}
 
-    .answer div {
-        background-color: rgba(255, 255, 255, 0.8);
-        padding: 0px 40px;
-        border-radius: 15px;
-        color: #111;
-        font-size: 1.5rem;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        font-family: 'Times New Roman', Times, serif;
-        font-weight: bold;
-        font-size: 40px;
-    }
+.answer div {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 0px 40px;
+    border-radius: 15px;
+    color: #111;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 40px;
+}
 
-    .answer div:hover {
-        background-color: #ff69b4;
-        color: white;
-        transform: scale(1.1);
-    }
+.answer div:hover {
+    background-color: #ff69b4;
+    color: white;
+    transform: scale(1.1);
+}
 
-    @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(-20px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
-    .picture {
-        width: 150px;          
-        height: 150px;         
-        object-fit: cover;     
-        border-radius: 20px;   
-        box-shadow: 0 4px 20px rgba(0,0,0,0.3); 
-        margin-bottom: 10%;
-        margin-right: 30px;
-    }
+.picture {
+    width: 150px;          
+    height: 150px;         
+    object-fit: cover;     
+    border-radius: 20px;   
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3); 
+    margin-bottom: 10%;
+    margin-right: 30px;
+}
 
-    .think-wrapper {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        margin-top: 50px;
-    }
-    .thought-bubble {
-        position: relative;
-        background: white;
-        border-radius: 25px;
-        padding: 15px 25px;
-        max-width: 220px;
-        font-size: 1.2rem;
-        color: #333;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        margin-bottom: 100px;
-    }
+.think-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+/* Bong bóng suy nghĩ */
+.thought-bubble {
+    position: relative;
+    background: white;
+    border-radius: 25px;
+    padding: 15px 25px;
+    max-width: 220px;
+    font-size: 1.2rem;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    margin-bottom: 100px;
+}
 
-    .thought-bubble::after {
-        content: "";
-        position: absolute;
-        left: -15px;
-        top: 20px;
-        width: 20px;
-        height: 20px;
-        background: white;
-        border-radius: 50%;
-        box-shadow: -25px 10px 0 white;
-    }
+/* Cái đuôi bong bóng */
+.thought-bubble::after {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: -25px 10px 0 white;
+}
+#btnco, #btnKo {
+    transition: transform 0.3s ease;
+}
+#btnco:hover, #btnKo:hover {
+    transform: scale(1.1);
+}
 
 </style>
 <body>
@@ -110,21 +118,18 @@
         <div class="thought-bubble">Đồng ý đi màaaa 😳</div>
     </div>
 
-    <div class="question">
-        <p>cậu có thik tớ hk</p>
-    </div>
+    <div class="question">cậu có thik tớ hk</div>
+
     <div class="answer">
-        <div>
-            <p>có</p>
-        </div>
-        <div id="btn-ko">
-            <p>ko</p>
-        </div>
+        <div id="btnco">Có</div>
+        <div id="btnKo">Ko</div>
     </div>
 </body>
+
 <!-- <script src="script.js"></script> -->
 <script>
-    const btnKo = document.getElementById('btn-ko');
+    const btnKo = document.getElementById('btnKo');
+    const btnco = document.getElementById('btnco');
     const img = document.getElementById('picture');
     const bubble = document.querySelector('.thought-bubble');
 
@@ -142,14 +147,74 @@
         'Thôi khỏi cần nữa... tớ ổn mà 🥲'
     ];
 
-    let currentImage = 0;
+    const img_yes = 'https://cdn.tech24.vn/upload/tech24_vn/post/images/2024/03/02/405/anh-meo-cute-trai-tim-1.jpg';
 
+    let currentImage = 0;
+    let scaleKo = 1;
+    let scaleCo = 1;
+
+    // Setup cố định cho nút "Có"
+    btnco.style.position = 'absolute';
+    btnco.style.left = '50%';
+    btnco.style.top = '72%';
+    btnco.style.transform = `translate(-120%, -50%) scale(${scaleCo})`;
+    btnco.style.transition = 'all 0.3s ease';
+
+    // Setup cho nút "Không"
+    btnKo.style.position = 'absolute';
+    btnKo.style.left = '50%';
+    btnKo.style.top = '72%';
+    btnKo.style.transform = `translate(20%, -50%) scale(${scaleKo})`;
+    btnKo.style.transition = 'all 0.3s ease';
+
+    // Xử lý khi click "Không"
     btnKo.addEventListener('click', () => {
+        // 1. Đổi ảnh và lời thoại
         img.src = imageList[currentImage];
         bubble.textContent = thoughtTexts[currentImage];
         currentImage = (currentImage + 1) % imageList.length;
+
+        // 2. Scale
+        scaleKo -= 0.1;
+        btnKo.style.transform = `scale(${scaleKo})`;
+        scaleCo += 0.1;
+        btnco.style.transform = `translate(-120%, -50%) scale(${scaleCo})`;
+
+        // 3. Random lại vị trí cho btnKo (tránh đè btnco)
+        const coRect = btnco.getBoundingClientRect();
+        const koWidth = btnKo.offsetWidth * scaleKo;
+        const koHeight = btnKo.offsetHeight * scaleKo;
+        const padding = 30;
+
+        let randomX, randomY, tries = 0;
+        do {
+            randomX = Math.random() * (window.innerWidth - koWidth);
+            randomY = Math.random() * (window.innerHeight - koHeight);
+            tries++;
+        } while (
+            randomX + koWidth > coRect.left - padding &&
+            randomX < coRect.right + padding &&
+            randomY + koHeight > coRect.top - padding &&
+            randomY < coRect.bottom + padding &&
+            tries < 100
+        );
+
+        btnKo.style.left = `${randomX}px`;
+        btnKo.style.top = `${randomY}px`;
     });
 
+    // Xử lý khi click "Có"
+    btnco.addEventListener('click', () => {
+        img.src = img_yes;
+        bubble.textContent = 'Cảm ơn cậu, tớ cũng thích cậu lắm luôn 🥰';
+        img.style.display = 'block';
+        bubble.style.display = 'block';
+
+        btnKo.style.display = 'none';
+        btnco.style.display = 'none';
+        document.querySelector('.question').style.display = 'none';
+    });
 
 </script>
+
 </html>

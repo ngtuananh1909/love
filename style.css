@@ -95,3 +95,39 @@ body {
     border-radius: 50%;
     box-shadow: -25px 10px 0 white;
 }
+#btnco, #btnKo {
+    transition: transform 0.3s ease;
+}
+#btnco:hover, #btnKo:hover {
+    transform: scale(1.1);
+}
+.answer {
+    position: relative;
+    width: 100%;
+    height: 100px;
+}
+.answer {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin-top: 20px;
+}
+
+/* btnco cố định giữa màn hình, bên trái */
+#btnco {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-120%) scale(1); /* Đẩy qua trái */
+    transition: all 0.3s ease;
+}
+
+/* btnKo nằm sát bên phải của btnco */
+#btnKo {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(20%) scale(1);
+    transition: all 0.3s ease;
+}
+
